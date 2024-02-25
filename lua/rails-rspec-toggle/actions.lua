@@ -1,3 +1,5 @@
+local options = require('rails-rspec-toggle.config').options
+
 local getFilePath = function()
   if vim.bo.filetype == 'ruby' then
     return vim.api.nvim_buf_get_name(0)
@@ -15,7 +17,6 @@ M.open_spec_from_app = function(filePath, rootPath)
   local regexPattern = "^" .. rootPath .. "/app/(.*)%.rb$"
   local match = string.match(filePath, regexPattern)
   if match then
-    print('this is an app file')
     return true
   end
   return false
@@ -27,8 +28,7 @@ end
 ---@param rootPath string
 ---@return boolean
 M.open_app_from_spec = function(filePath, rootPath)
-  -- TODO: replace spec with a configuration
-  local regexPattern = "^" .. rootPath .. "/" .. "test" .. "/(.*)_test%.rb$"
+  local regexPattern = "^" .. rootPath .. "/" .. options.spec_directory .. "/(.*)" .. options.spec_file_suffix .. "$"
   local match = string.match(filePath, regexPattern)
   if match then
     return true
