@@ -35,11 +35,15 @@ end
 ---runs command in a terminal split.
 ---
 ---@param partial_path string
----@return string
+---@return string|nil
 Rails.generate = function(partial_path)
   local spec_type = string.match(partial_path, "^(.*)s%/")
   local app_file = string.match(partial_path, "/(.*)$")
-  return 'bundle exec rails g ' .. options.generator_map[spec_type] .. ' ' .. app_file
+  local generator = options.generator_map[spec_type]
+  if not generator then
+    return nil
+  end
+  return 'bundle exec rails g ' .. generator .. ' ' .. app_file
 end
 
 return Rails
