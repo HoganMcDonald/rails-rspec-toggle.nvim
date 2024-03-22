@@ -23,6 +23,14 @@ Rails.spec_file_path = function(partial_path)
   return '/' .. options.spec_directory .. '/' .. partial_path .. options.spec_file_suffix
 end
 
+---takes a partial path and returns the app file path.
+---
+---@param partial_path string
+---@return string
+Rails.app_file_path = function(partial_path)
+  return '/app/' .. partial_path .. '.rb'
+end
+
 ---takes a partial path and calls the correct generator based on spec directory.
 ---runs command in a terminal split.
 ---
