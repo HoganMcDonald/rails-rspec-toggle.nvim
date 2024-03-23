@@ -2,6 +2,8 @@
 
 rails-rspec-toggle.nvim is a Neovim plugin written in Lua designed to enhance productivity for Ruby on Rails developers. It was inspired by [rails-rspec-file-toggle](https://github.com/malt03/rails-rspec-file-toggle) for vscode. It allows you to swiftly toggle between your application files and their corresponding spec files with a simple keybinding.
 
+![example](https://github.com/HoganMcDonald/rails-rspec-toggle.nvim/assets/25830763/dc1483cf-1bae-4f39-967f-e3a325316c59)
+
 ## Features
 
 - **Easy Toggling:** Switch between your Rails app files and spec files with a single command.
