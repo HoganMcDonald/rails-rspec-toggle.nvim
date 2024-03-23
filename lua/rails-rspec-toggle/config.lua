@@ -12,14 +12,10 @@ local defaults = {
   generator_map = {
     channel = 'rspec:channel',
     controller = 'rspec:controller',
-    feature = 'rspec:feature',
     helper = 'rspec:helper',
-    integration = 'rspec:integration',
     job = 'rspec:job',
-    mailbox = 'rspec:mailbox',
     mailer = 'rspec:mailer',
     model = 'rspec:model',
-    request = 'rspec:request',
     view = 'rspec:view',
   },
 }
