@@ -19,9 +19,9 @@ end
 ---
 ---@return string
 Files.root_path = function()
-  local path = vim.fn.findfile('Gemfile', vim.fn.fnamemodify(Files.current_path(), ":p") .. ";")
+  local path = vim.fn.findfile('Gemfile', vim.fn.fnamemodify(Files.current_path(), ':p') .. ';')
   if path and #path > 0 then
-    path = vim.fn.fnamemodify(path, ":p:h")
+    path = vim.fn.fnamemodify(path, ':p:h')
   end
   return path
 end

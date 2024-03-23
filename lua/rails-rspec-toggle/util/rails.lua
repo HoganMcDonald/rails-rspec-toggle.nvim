@@ -1,5 +1,5 @@
 local options = require('rails-rspec-toggle.config').options
-local Files = require('rails-rspec-toggle.util.files')
+local Files = require 'rails-rspec-toggle.util.files'
 
 local Rails = {}
 
@@ -8,9 +8,9 @@ local Rails = {}
 ---@param file_path string
 ---@return string|nil "spec" or "app"
 Rails.file_type = function(file_path)
-  if string.match(file_path, "^" .. Files.root_path() .. "/spec/") then
+  if string.match(file_path, '^' .. Files.root_path() .. '/spec/') then
     return 'spec'
-  elseif string.match(file_path, "^" .. Files.root_path() .. "/app/") then
+  elseif string.match(file_path, '^' .. Files.root_path() .. '/app/') then
     return 'app'
   end
 end
@@ -37,8 +37,8 @@ end
 ---@param partial_path string
 ---@return string|nil
 Rails.generate = function(partial_path)
-  local spec_type = string.match(partial_path, "^(.*)s%/")
-  local app_file = string.match(partial_path, "/(.*)$")
+  local spec_type = string.match(partial_path, '^(.*)s%/')
+  local app_file = string.match(partial_path, '/(.*)$')
   local generator = options.generator_map[spec_type]
   if not generator then
     return nil

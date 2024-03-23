@@ -1,5 +1,5 @@
-local config = require('rails-rspec-toggle.config')
-local actions = require('rails-rspec-toggle.actions')
+local actions = require 'rails-rspec-toggle.actions'
+local config = require 'rails-rspec-toggle.config'
 
 local M = {}
 

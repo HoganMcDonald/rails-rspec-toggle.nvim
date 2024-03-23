@@ -1,7 +1,7 @@
 local options = require('rails-rspec-toggle.config').options
-local Files = require('rails-rspec-toggle.util.files')
-local Rails = require('rails-rspec-toggle.util.rails')
-local Terminal = require('rails-rspec-toggle.util.terminal')
+local Files = require 'rails-rspec-toggle.util.files'
+local Rails = require 'rails-rspec-toggle.util.rails'
+local Terminal = require 'rails-rspec-toggle.util.terminal'
 
 local M = {}
 
@@ -11,7 +11,7 @@ local M = {}
 ---@param file_path string
 ---@param root_path string
 M.open_spec_from_app = function(file_path, root_path)
-  local regex_pattern = "^" .. root_path .. "/app/(.*)%.rb$"
+  local regex_pattern = '^' .. root_path .. '/app/(.*)%.rb$'
   local match = string.match(file_path, regex_pattern)
   if match then
     local spec_file_path = Files.root_path() .. Rails.spec_file_path(match)
@@ -36,7 +36,7 @@ end
 ---@param filePath string
 ---@param rootPath string
 M.open_app_from_spec = function(filePath, rootPath)
-  local regexPattern = "^" .. rootPath .. "/" .. options.spec_directory .. "/(.*)" .. "_spec.rb$"
+  local regexPattern = '^' .. rootPath .. '/' .. options.spec_directory .. '/(.*)' .. '_spec.rb$'
   local match = string.match(filePath, regexPattern)
   if match then
     local app_file_path = Files.root_path() .. Rails.app_file_path(match)

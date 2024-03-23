@@ -1,4 +1,4 @@
-local Files = require('rails-rspec-toggle.util.files')
+local Files = require 'rails-rspec-toggle.util.files'
 
 local Terminal = {}
 
@@ -17,9 +17,9 @@ Terminal.run = function(command, callback)
         vim.api.nvim_buf_delete(term, { force = true })
       end
       callback()
-    end
+    end,
   }
-  vim.cmd('botright 24split new')
+  vim.cmd 'botright 24split new'
   term = vim.api.nvim_get_current_buf()
   vim.fn.termopen(command, opts)
 end
