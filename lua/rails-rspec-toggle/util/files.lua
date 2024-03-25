@@ -26,13 +26,11 @@ Files.root_path = function()
   return path
 end
 
----Opens file at path if it exists
+---Opens file at path. Creates it if it doesn't exist.
 ---
 ---@param path string
 Files.open = function(path)
-  if Files.exists(path) then
-    vim.cmd('e ' .. path)
-  end
+  vim.cmd('e ' .. path)
 end
 
 return Files
